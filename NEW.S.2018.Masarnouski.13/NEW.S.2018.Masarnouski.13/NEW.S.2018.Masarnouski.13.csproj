@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Matrix\ChangeElementEventArgs.cs" />
+    <Compile Include="Matrix\DioganalMatrix.cs" />
+    <Compile Include="Matrix\Operations.cs" />
     <Compile Include="Matrix\SquareMatrix.cs" />
+    <Compile Include="Matrix\SymmetricMatrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

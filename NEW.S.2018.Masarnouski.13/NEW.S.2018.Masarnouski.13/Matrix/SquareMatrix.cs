@@ -6,19 +6,39 @@ using System.Threading.Tasks;
 
 namespace NEW.S._2018.Masarnouski._13.Matrix
 {
-    class SquareMatrix<T>
+    public class SquareMatrix<T>
     {
-
+        public delegate void ChangeElementHandler(object sender, ChangeElementEventArgs<T> e);
+        #region fields 
         protected readonly T[,] matrix;
         protected int size;
+        public event ChangeElementHandler ChangeValue;
 
+        #endregion
 
+        #region Constructors
         public SquareMatrix(int size)
         {
             this.Size = size;
             this.matrix = new T[this.Size, this.Size];
-
         }
+        public SquareMatrix(T[,] matrix)
+        {
+            if (matrix is null)
+            {
+                throw new ArgumentNullException(nameof(matrix));
+            }
+
+            if (matrix.GetLength(0) != matrix.GetLength(1))
+            {
+                throw new ArgumentException($"{nameof(matrix)} must be square matrix.");
+            }
+            this.Size = matrix.GetLength(0);
+            this.matrix = matrix;
+        }
+        #endregion
+
+        #region Properties
         public int Size
         {
             get { return this.size; }
@@ -31,21 +51,32 @@ namespace NEW.S._2018.Masarnouski._13.Matrix
                 this.size = value;
             }
         }
-
-        public SquareMatrix(T[,] matrix)
+        public virtual T this[int i, int j]
         {
-            if (matrix is null)
+            get
             {
-                throw new ArgumentNullException(nameof(matrix));
-            }
+                if (!(i < this.Size && j < this.Size))
+                {
+                    throw new IndexOutOfRangeException();
+                }
 
-            if (matrix.GetLength(0) != matrix.GetLength(1))
+                return this.matrix[i, j];
+            }
+            set
             {
-                throw new ArgumentException($"{nameof(matrix)} must be square matrix.");
-            }
+                if (!(i < this.Size && j < this.Size))
+                {
+                    throw new IndexOutOfRangeException();
+                }
 
-            this.Size = matrix.GetLength(0);
-            this.matrix = matrix;
+                this.matrix[i, j] = value;
+            }
+        }
+        #endregion
+
+        protected virtual void OnChangeValue(object sender,ChangeElementEventArgs<T> eventArgs)
+        {
+            this.ChangeValue?.Invoke(sender, eventArgs);
         }
     }
 }
