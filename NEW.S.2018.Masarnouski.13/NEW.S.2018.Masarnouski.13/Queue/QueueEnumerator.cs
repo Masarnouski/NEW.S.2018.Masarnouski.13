@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace NEW.S._2018.Masarnouski._13.Queue
 {
-    /// <summary>
-    /// Provides a custom queue enumerator.
-    /// </summary>
-    /// <typeparam name="T">Type of the queue elements.</typeparam>
+  
     public class QueueEnumerator<T> : IEnumerator<T>, IEnumerator
     {
         #region Private fields
@@ -21,12 +18,9 @@ namespace NEW.S._2018.Masarnouski._13.Queue
 
         #endregion !Private fields.
 
-        #region Public constructors
+        #region Сonstructors
 
-        /// <summary>
-        /// Initializes an instance of the <see cref="QueueEnumerator{T}"/> with the passed queue.
-        /// </summary>
-        /// <param name="queue">A queue for enumerate.</param>
+  
         public QueueEnumerator(ListQueue<T> queue)
         {
             Queue = queue;
@@ -34,9 +28,9 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             _currentElement = default(T);
         }
 
-        #endregion !Public constructors.
+        #endregion
 
-        #region Private properties
+        #region Properties
 
         private ListQueue<T> Queue
         {
@@ -56,13 +50,10 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             }
         }
 
-        #endregion !Private properties.ss
+        #endregion
 
         #region IEnumerator implementation
 
-        /// <summary>
-        /// The current element in the queue.
-        /// </summary>
         public T Current
         {
             get
@@ -81,9 +72,6 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             }
         }
 
-        /// <summary>
-        /// The current element in the queue.
-        /// </summary>
         object IEnumerator.Current
         {
             get
@@ -102,19 +90,12 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             }
         }
 
-        /// <summary>
-        /// Releases resources of the enumerator.
-        /// </summary>
         public void Dispose()
         {
             _index = -2;
             _currentElement = default(T);
         }
 
-        /// <summary>
-        /// Advances the enumerator to the next element of the collection.
-        /// </summary>
-        /// <returns>true if enum started or not ended yet, false otherwise.</returns>
         public bool MoveNext()
         {
             if (_index == -2)
@@ -137,15 +118,12 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             return true;
         }
 
-        /// <summary>
-        /// Sets the enumerator to its initial position, which is before the first element in the collection.
-        /// </summary>
         public void Reset()
         {
             _index = -1;
             _currentElement = default(T);
         }
 
-        #endregion !IEnumerator implementation.
+        #endregion
     }
 }

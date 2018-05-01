@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NEW.S.2018.Masarnouski.13", "NEW.S.2018.Masarnouski.13\NEW.S.2018.Masarnouski.13.csproj", "{D1B2565A-3461-40BD-92DE-7B33C1D5E28A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Tests", "Logic.Tests\Logic.Tests.csproj", "{114A9DC9-A2FF-447C-9D4A-1A624A9A00EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D1B2565A-3461-40BD-92DE-7B33C1D5E28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1B2565A-3461-40BD-92DE-7B33C1D5E28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1B2565A-3461-40BD-92DE-7B33C1D5E28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114A9DC9-A2FF-447C-9D4A-1A624A9A00EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114A9DC9-A2FF-447C-9D4A-1A624A9A00EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114A9DC9-A2FF-447C-9D4A-1A624A9A00EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114A9DC9-A2FF-447C-9D4A-1A624A9A00EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

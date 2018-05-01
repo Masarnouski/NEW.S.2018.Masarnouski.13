@@ -115,7 +115,7 @@ namespace NEW.S._2018.Masarnouski._13.Queue
             return new QueueEnumerator<T>(this);
         }
 
-        internal T GetElement(int index)
+        public T GetElement(int index)
         {
             if (index < 0 || index >= this.Count)
                 throw new ArgumentException($" Incorrect {nameof(index)}");
